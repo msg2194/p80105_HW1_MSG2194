@@ -29,3 +29,39 @@ plot(pressure)
 ```
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+```{r}
+library(tidyverse)
+```
+
+
+## Problem 2
+```{r Problem 2}
+problem_2_dataframe = tibble(
+ obs = runif(10, min = 0, max = 5),
+ vec_logic_g2 = obs > 2,
+ vec_char = c("one", "two", "three", "four", "five", "six", "seven", "eight", 
+               "nine", "ten"),
+ vec_factor = factor(c("male", "male", "male", "female", "female", "female",
+                       "male", "male", "male", "female")),
+ mean(obs),
+ mean(vec_logic_g2),
+ mean(vec_char),
+ mean(vec_factor),
+)
+```
+When attempting to take the mean of character variables, it does not work
+because means can only be taken of numeric variables.
+
+### Converting variable types
+
+```{r Problem 2 Character Types 1}
+
+as.numeric(vec_char),
+as.numeric(vec_factor)
+```
+The above code yields an error because these are character variables.
+
+
+
+
+
